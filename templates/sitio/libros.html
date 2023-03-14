@@ -1,0 +1,32 @@
+{% include "sitio/cabecera.html" %}
+
+
+
+    <div class="row">
+        <!-- mediante un for se repite como blucle la creación del espacio de almacenamiento y se ingresan los datos almacenados en la BD -->
+
+        {% for libro in libros %}
+        <div class="col-md-3">
+            <div class="card">
+                <img width="40px" height="100px" class="card-img-top" src="/img/{{libro[2]}}" alt="Title">
+                <!-- las imagenes tienen un tratamiento especial, ya que se crean variables de almacenamiento en el mismo proyecto que se usan en img/ -->
+                <div class="card-body">
+                    <h4 class="card-title">{{libro[1]}}</h4>
+                    <p class="card-text">
+                        <a name="" id="" class="btn btn-primary" href="{{libro[3]}}" role="button">Descargar</a>
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+        {% endfor %}
+
+
+    </div>
+
+
+ 
+
+
+
+{% include "sitio/pie.html" %}
